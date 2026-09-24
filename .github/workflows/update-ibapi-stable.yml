@@ -140,7 +140,7 @@ jobs:
 
             # Download and update (this will commit and tag)
             echo "  Downloading and updating..."
-            python scripts/update_ibapi.py "$URL"
+            python scripts/update_ibapi.py "$URL" stable
 
             # Build package
             echo "  Building package..."
@@ -236,6 +236,5 @@ jobs:
             gh release create "$TAG" \
               --title "IB API $VERSION (Stable)" \
               --notes "Automated release of Interactive Brokers TWS API Python client version $VERSION. This is a **stable** version of the IB API. Install: pip install ibapi==$VERSION" \
-              --verify-tag \
-              || echo "Release for $TAG already exists"
+              --verify-tag
           done
