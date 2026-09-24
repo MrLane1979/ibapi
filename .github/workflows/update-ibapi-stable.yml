@@ -236,5 +236,6 @@ jobs:
             gh release create "$TAG" \
               --title "IB API $VERSION (Stable)" \
               --notes "Automated release of Interactive Brokers TWS API Python client version $VERSION. This is a **stable** version of the IB API. Install: pip install ibapi==$VERSION" \
-              --verify-tag
+              --verify-tag \
+              --latest=false
           done
